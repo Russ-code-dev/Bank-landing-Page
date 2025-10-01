@@ -1,0 +1,388 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --text-color: hsl(233, 26%, 24%);
+  --logo-color: hsl(233, 26%, 24%);
+  --first-background: hsl(0, 100%, 100%);
+  --button-colors: hsl(136, 64%, 51%);
+  --second-background: hsl(233, 8%, 62%);
+  --button2-colors: cyan;
+}
+
+body {
+  padding-left: 5px;
+}
+
+/* <styling the navbar> */
+
+.navbar {
+  position: relative;
+  display: flex;
+  background-color: var(--first-background);
+  justify-content: space-between;
+  padding: 1em 3em;
+  height: 7vh;
+  z-index: 10;
+}
+
+.navbar .logo img {
+  display: flex;
+  justify-content: start;
+  padding-left: 5em;
+}
+
+.navbar .links {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.navbar .links a {
+  text-decoration: none;
+  justify-content: space-between;
+  align-items: row;
+  position: relative;
+  cursor: pointer;
+  row-gap: 3em;
+  color: var(--text-color);
+  padding: 0 25px;
+  color: var(--second-background);
+  transition: var(--button-colors) 0.5s ease;
+}
+
+.navbar .links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--button-colors);
+  transition: width 0.5s ease;
+}
+
+.navbar .links a:hover::after {
+  width: 100%;
+}
+
+.navbar .RequesInvite {
+  display: flex;
+  flex-direction: end;
+}
+
+.navbar .RequestInvite button {
+  display: flex;
+  background: linear-gradient(199deg, hsl(136, 64%, 51%), cyan);
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.navbar .RequestInvite button:hover {
+  background-color: linear-gradient(199deg, hsl(136, 64%, 51%), cyan);
+  transform: scale(0.8);
+}
+
+/* styling the hero section */
+
+.HeroSection {
+  display: flex;
+  background-image: var(--second-background);
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 3em;
+  gap: 3em;
+  height: 60vh;
+  animation: slideInLeft 1.5s ease-out;
+}
+
+@media (max-width: 430px) {
+  .HeroSection .section1 {
+    display: flex;
+    width: 100px;
+    height: 25vh;
+    padding-bottom: 3em;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.HeroSection .section1 {
+  padding-top: 6em;
+}
+
+.HeroSection .section1 .RequestInvite {
+  display: flex;
+  align-items: center;
+  padding-top: 3em;
+}
+
+.HeroSection .section1 p {
+  color: var(--text-color);
+}
+
+.HeroSection .section1 .RequestInvite button {
+  width: 150px;
+  height: 50px;
+  border-radius: 24px;
+  border: none;
+  background: linear-gradient(199deg, hsl(136, 64%, 51%), cyan);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.HeroSection .section1 .RequestInvite button:hover {
+  transform: scale(0.8);
+}
+
+.HeroSection .section2 {
+  display: flex;
+  padding-right: 2em;
+  margin-top: -4em;
+  position: realtive;
+}
+
+.HeroSection .section2 img {
+  height: 90vh;
+  width: 700px;
+}
+
+.HeroSection .section2 .mockups {
+  height: 96vh;
+  width: 400px;
+  position: absolute;
+  top: 20px;
+}
+
+/* styling the services we provide */
+
+.Servicesweprovide {
+  display: flex;
+  padding-top: 5em;
+  padding-left: 3em;
+  height: 75vh;
+  flex-direction: column;
+  animation: slideInDown 1s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.Servicesweprovide .text h3 {
+  font-size: 25px;
+  color: var(--text-color);
+}
+
+.Servicesweprovide .text p {
+  color: var(--text-color);
+  padding-top: 2em;
+}
+
+.services {
+  display: flex;
+  flex-direction: row;
+  padding-left: 2em;
+  padding-top: 2.4em;
+  justify-content: space-between;
+  padding-right: 5em;
+  gap: 1em;
+}
+
+.services .OnlineBanking {
+  display: flex;
+  height: 25px;
+  width: 155px;
+  flex-direction: column;
+  transition: 0.2s ease-in-out;
+}
+
+.services .OnlineBanking:hover {
+  transform: scale(1.2);
+}
+
+.services .OnlineBanking p {
+  color: var(--text-color);
+}
+
+.services .OnlineBanking img {
+  height: 50px;
+  width: 60px;
+}
+
+.services .content {
+  padding-top: 1em;
+}
+
+.services .content h4 {
+  font-size: 25px;
+  color: black;
+  font-weight: lighter;
+}
+
+/* styling the latest articles */
+
+.LatestArticles {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-left: 4em;
+  padding-top: 2em;
+  height: 130vh;
+}
+
+.LatestArticles h1 {
+  color: lightslategray;
+  padding: 3em 0 2em 1em;
+}
+
+.LatestArticles .articles {
+  padding-top: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 3em;
+  padding-right: 3em;
+}
+
+/* 
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+} */
+
+.LatestArticles .articles .cards {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  height: 70vh;
+  background-color: white;
+  border-radius: 12px;
+  transition: 0.4s ease-in-out;
+}
+
+.LatestArticles .articles .cards:hover {
+  transform: scale(1.3);
+}
+
+.LatestArticles .articles .cards h6 {
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+}
+
+.LatestArticles .articles .cards img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.LatestArticles .articles .cards h3 {
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+}
+
+.LatestArticles .articles .cards p {
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
+}
+
+/* styling the footer */
+
+.lastDiv {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background-color: hsl(233, 26%, 24%);
+  height: 28vh;
+  flex-direction: row;
+  padding-right: 3em;
+  justify-content: space-between;
+  gap: 3em;
+}
+.lastDiv a {
+  text-decoration: none;
+  color: var(--first-background);
+}
+
+.lastDiv .col1 {
+  display: flex;
+  padding-left: 3em;
+  flex-direction: column;
+  padding-top: 3em;
+}
+
+.lastDiv .col1 .socialmedia {
+  display: flex;
+  flex-direction: row;
+  padding-top: 2em;
+  gap: 2em;
+}
+
+.lastDiv .col2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-top: 3em;
+  gap: 1em;
+}
+
+.lastDiv .col3 {
+  display: flex;
+  flex-direction: column;
+  padding-left: -5em;
+  align-items: start;
+  padding-top: 3em;
+  gap: 1em;
+}
+.lastDiv .col4 {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3em;
+  align-items: start;
+  padding-top: 3em;
+  gap: 2em;
+  color: azure;
+}
+
+.lastDiv .col4 button {
+  height: 50px;
+  width: 150px;
+  background: linear-gradient(199deg, hsl(136, 64%, 51%), cyan);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.lastDiv .col4 button:hover {
+  transform: scale(0.8);
+}
